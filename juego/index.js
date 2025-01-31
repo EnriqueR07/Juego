@@ -1,4 +1,6 @@
 
+
+
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d")
 
@@ -32,7 +34,7 @@ function pintarPilota(){
 
 function duplicarPilotes(){
     ctx.beginPath();
-    ctx.arc(x, y, radiPilota, 0, Math.PI*2)
+    ctx.arc(x+1000, y+1000, radiPilota, 0, Math.PI*2)
     ctx.fillStyle = "#FFF";
     ctx.fill();
     ctx.closePath();
@@ -115,6 +117,18 @@ function inicialitzardorEvents(){
         if(event.key == 'k'){
             
         }
+        if(event.key == 'c'){
+            let dxNova = dx;
+            let dyNova = dx;
+
+            dx=0;
+            dy=0;
+
+            setTimeout(()=>{
+                dx= dxNova;
+                dy= dyNova;
+            } ,3000)
+        }
     }
 
     function soltar(event){
@@ -127,6 +141,8 @@ function inicialitzardorEvents(){
     }
 }
 
+
+
 function pintarCanvas(){
     console.log("Hola");
     borrarPantalla();
@@ -136,6 +152,7 @@ function pintarCanvas(){
     deteccioColisio();
     movimentPilota();
     movimentPala();
+    duplicarPilotes();
 
     window.requestAnimationFrame(pintarCanvas);
 }
