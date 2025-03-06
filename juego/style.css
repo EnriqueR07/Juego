@@ -1,10 +1,17 @@
 body{
-    background: rgb(138, 218, 255);
+    background: rgb(254, 254, 254);
+    background-size: cover;
+    background-image: url(./img/fondo\ movimiento\ 2.gif);
+    background-size:cover;
+    
+
 }
 canvas{
-    border: 4px solid rgb(0, 0, 0);
+    border: 4px solid rgb(255, 255, 255);
     margin: 0 auto;
     display: block;
     border-bottom: transparent;
-}
+    background-image:url(./img/fondo\ BLANCO.avif);
+background-size: cover;
 
+}
